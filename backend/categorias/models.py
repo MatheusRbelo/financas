@@ -6,6 +6,7 @@ class Categoria(models.Model):
         ('RECEITA', 'Receita'),
         ('DESPESA', 'Despesa'),
     ]
+
     nome = models.CharField(max_length=100)
     tipo = models.CharField(max_length=10, choices=TIPO_CHOICES)
 
