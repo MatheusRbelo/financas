@@ -16,3 +16,10 @@ def listar_transacoes_pendentes(request):
     transacoes = Transacao.objects.filter(status='PENDENTE')
     serializer = TransacaoSerializer(transacoes, many=True)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+def listar_transacoes_pagas(request):
+    transacoes = Transacao.objects.filter(status='PAGO')
+    serializer = TransacaoSerializer(transacoes, many=True)
+    return Response(serializer.data)
